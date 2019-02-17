@@ -1,0 +1,18 @@
+<div class="container">
+    <h1 >Consultas</h1>
+    
+    <table class="table" id="consultas">
+        <th>ID</th>
+        <th>Especialista</th>
+        <th>Data</th>
+        <th>Hora</th>
+        <% @consultas.each do |consulta| %>
+            <tr>
+                <td><%= consulta.id %><td>
+                <td><%= consulta.especialidade %><td>
+                <td><%= consulta.horario %><td>
+                <td><%= consulta.horario %><td>
+            </tr>
+        <% end %>
+    </table>
+</div>
