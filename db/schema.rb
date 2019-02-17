@@ -15,7 +15,10 @@ ActiveRecord::Schema.define(version: 20190217000438) do
 
   create_table "consulta", force: :cascade do |t|
     t.string   "especialidade"
-    t.datetime "horario"
+    t.date     "data"
+    t.time     "horario"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

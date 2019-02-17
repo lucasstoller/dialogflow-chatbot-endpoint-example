@@ -1,18 +1,26 @@
 <div class="container">
-    <h1 >Consultas</h1>
-    
+    <h1>Consultas</h1>
+
     <table class="table" id="consultas">
-        <th>ID</th>
-        <th>Especialista</th>
-        <th>Data</th>
-        <th>Hora</th>
-        <% @consultas.each do |consulta| %>
+        <thead>
             <tr>
-                <td><%= consulta.id %><td>
-                <td><%= consulta.especialidade %><td>
-                <td><%= consulta.horario %><td>
-                <td><%= consulta.horario %><td>
+            <th scope="col">#Código</th>
+            <th scope="col">Especialidade</th>
+            <th scope="col">Data</th>
+            <th scope="col">Horário</th>
+            <th scope="col">Marcado há</th>
             </tr>
-        <% end %>
+        </thead>
+        <tbody>
+            <% @consultas.each do |consulta| %>
+                <tr>
+                    <td scope="row"><%= consulta.id %></td>
+                    <td><%= consulta.especialidade %></td>
+                    <td><%= consulta.data.strftime('%m/%d/%Y')%></td>
+                    <td><%= consulta.horario.strftime("%H:%M") %></td>
+                    <td><%= time_ago_in_words consulta.created_at %></td>
+                </tr>
+            <% end %>
+        </tbody>
     </table>
 </div>
